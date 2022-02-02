@@ -49,7 +49,7 @@ function uss_out = lftToRct(ulft_input)
             dim_out = delta_integrator.dim_out;
     end
     
-    ts = 0
+    ts =  0
     
     if ~isempty(delta) && isa(delta{1}, 'DeltaDelayZ')
         ts = delta{1}.timestep;
