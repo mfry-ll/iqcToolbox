@@ -41,7 +41,7 @@ function uss_out = lftToRct(ulft_input)
     % uss A matrix only holds the information the state deltas - if there
     % are none, the dimension will be 0
     dim_in = 0;
-    dim_out = 0
+    dim_out = 0;
     if ~isempty(delta) && isa(delta{1}, 'DeltaDelayZ') ||...
        ~isempty(delta) && isa(delta{1}, 'DeltaIntegrator')
             delta_integrator = delta{1};
@@ -49,7 +49,7 @@ function uss_out = lftToRct(ulft_input)
             dim_out = delta_integrator.dim_out;
     end
     
-    ts = 0
+    ts = 0;
     
     if ~isempty(delta) && isa(delta{1}, 'DeltaDelayZ')
         ts = delta{1}.timestep;
