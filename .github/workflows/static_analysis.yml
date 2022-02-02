@@ -39,6 +39,8 @@ jobs:
           echo ${{ github.event.organization }}
           echo ${{ github.event.repository }}
           gh pr checkout ${{ github.event.pull_request.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         name: Checkout static_analyzer and rules
 
       # Run static analysis on base commit
