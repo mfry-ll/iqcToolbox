@@ -34,12 +34,12 @@ jobs:
         uses: matlab-actions/setup-matlab@v0
 
       # Use static analyzer and rules from HEAD commit
-      - name: Checkout static_analyzer and rules
-        run: |
-	  echo ${{ github.event.organization }}
-	  echo ${{ github.event.repository }}
-	  gh pr checkout ${{ github.event.pull_request.number }}
 #        run: git checkout ${{ github.event.pull_request.head.sha }} -- +tests/static_analyzer_base.m +tests/chkcode_rules.txt
+      - run: |
+          echo ${{ github.event.organization }}
+          echo ${{ github.event.repository }}
+          gh pr checkout ${{ github.event.pull_request.number }}
+        name: Checkout static_analyzer and rules
 
       # Run static analysis on base commit
       - name: Base static analysis
