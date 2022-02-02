@@ -60,7 +60,7 @@ function uss_out = lftToRct(ulft_input)
     c = m(dim_in+1:end, 1:dim_out);
     d = m(dim_in+1:end, dim_out+1:end);
     
-    ss_lft = ss(a, b, c, d, ts)
+    ss_lft = ss(a, b, c, d, ts);
     
     uss_out = lft(uncertainties, ss_lft);
 end
