@@ -26,7 +26,7 @@ function uss_out = lftToRct(ulft_input)
            'lftToRct:lftToRct',...
            strcat('RCT does not support eventually-periodic systems. ',...
            ' Ulft systems must have a [0 1] horizon period.'))
-    m = [ulft_input.a, ulft_input.b; ulft_input.c, ulft_input.d];
+    m = [ulft_input.a, ulft_input.b; ulft_input.c, ulft_input.d]
     m = cell2mat(m);
     
     delta = ulft_input.delta;
